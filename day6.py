@@ -12,7 +12,7 @@ for i in range(len(grid)):
         row = i
         col = grid[i].index("^")
         break
-
+        
 start = [row, col]  # save starting position (for part 2)
 
 direction = "^"
@@ -65,7 +65,7 @@ def find_loop(r: int, c: int) -> bool:
             direction = ">"
             if row-1 < 0: break
         elif direction == ">":
-            while col+1 < len(grid[0]) and g[row][col+1] != "#":
+            while col+1 < len(g[0]) and g[row][col+1] != "#":
                 col += 1
             direction = "v"
             if col+1 >= len(g[0]): break
