@@ -17,19 +17,9 @@ class trailhead:
 
 def bfs(r: int, c: int):
     res = trailhead()
-    if map[r][c] == "8":
-        if r-1 >= 0 and map[r-1][c] == "9":
-            res.end.add((r-1, c))
-            res.rating += 1
-        if r+1 < len(map) and map[r+1][c] == "9":
-            res.end.add((r+1, c))
-            res.rating += 1
-        if c-1 >= 0 and map[r][c-1] == "9":
-            res.end.add((r, c-1))
-            res.rating += 1
-        if c+1 < len(map[0]) and map[r][c+1] == "9":
-            res.end.add((r, c+1))
-            res.rating += 1
+    if map[r][c] == "9":
+        res.end.add((r, c))
+        res.rating += 1
         return res
     else:
         if r-1 >= 0 and int(map[r-1][c]) == int(map[r][c])+1:
